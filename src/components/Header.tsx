@@ -2,7 +2,7 @@ import Link from 'next/link'
 import React from 'react'
 const Header = () => {
   return (
-    <div className="w-full fixed absolute z-[2]">
+    <div className="w-full fixed z-[5]">
       <div className="container mx-auto flex flex-row justify-start items-center py-6 gap-40">
         
         {/* Logo Section */}

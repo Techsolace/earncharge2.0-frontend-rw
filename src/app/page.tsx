@@ -3,7 +3,8 @@ import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import { WobbleCardDemo } from "@/components/Wobble";
 import { HeroGeometric } from "@/components/ui/shape-landing-hero";
-
+import { Case } from "@/components/Carousel";
+import {MarqueeDemo } from "@/components/Marquee";
 export default function Home() {
   return (
     <>
@@ -17,6 +18,8 @@ export default function Home() {
       <div className="absolute z-[2] min-h-screen w-full pb-20">
         <AppleCardsCarouselDemo />
         <WobbleCardDemo />
+        <Case />
+        <MarqueeDemo />
       </div>
     </>
   );
