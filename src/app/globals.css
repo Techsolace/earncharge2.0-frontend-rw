@@ -1,0 +1,488 @@
+@import url("https://fonts.googleapis.com/css2?family=Bitcount+Grid+Single:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap");
+
+@import "tailwindcss";
+@import "tw-animate-css";
+
+.bitcount-grid-single {
+  font-family: "Bitcount Grid Single", system-ui;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-variation-settings: "slnt" 0, "CRSV" 0.5, "ELSH" 0, "ELXP" 0;
+}
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar: var(--sidebar);
+  --color-chart-5: var(--chart-5);
+  --color-chart-4: var(--chart-4);
+  --color-chart-3: var(--chart-3);
+  --color-chart-2: var(--chart-2);
+  --color-chart-1: var(--chart-1);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --animate-shiny-text: shiny-text 8s infinite;
+  @keyframes shiny-text {
+    0%,
+    90%,
+    100% {
+      background-position: calc(-100% - var(--shiny-width)) 0;
+    }
+    30%,
+    60% {
+      background-position: calc(100% + var(--shiny-width)) 0;
+    }
+  }
+  --animate-line-shadow: line-shadow 15s linear infinite;
+  @keyframes line-shadow {
+    0% {
+      background-position: 0 0;
+    }
+    100% {
+      background-position: 100% -100%;
+    }
+  }
+  @keyframes line-shadow {
+    0% {
+      background-position: 0 0;
+    }
+    100% {
+      background-position: 100% -100%;
+    }
+  }
+}
+
+:root {
+  --radius: 0.625rem;
+  --background: oklch(1 0 0);
+  --foreground: oklch(0.145 0 0);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.145 0 0);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.145 0 0);
+  --primary: oklch(0.205 0 0);
+  --primary-foreground: oklch(0.985 0 0);
+  --secondary: oklch(0.97 0 0);
+  --secondary-foreground: oklch(0.205 0 0);
+  --muted: oklch(0.97 0 0);
+  --muted-foreground: oklch(0.556 0 0);
+  --accent: oklch(0.97 0 0);
+  --accent-foreground: oklch(0.205 0 0);
+  --destructive: oklch(0.577 0.245 27.325);
+  --border: oklch(0.922 0 0);
+  --input: oklch(0.922 0 0);
+  --ring: oklch(0.708 0 0);
+  --chart-1: oklch(0.646 0.222 41.116);
+  --chart-2: oklch(0.6 0.118 184.704);
+  --chart-3: oklch(0.398 0.07 227.392);
+  --chart-4: oklch(0.828 0.189 84.429);
+  --chart-5: oklch(0.769 0.188 70.08);
+  --sidebar: oklch(0.985 0 0);
+  --sidebar-foreground: oklch(0.145 0 0);
+  --sidebar-primary: oklch(0.205 0 0);
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.97 0 0);
+  --sidebar-accent-foreground: oklch(0.205 0 0);
+  --sidebar-border: oklch(0.922 0 0);
+  --sidebar-ring: oklch(0.708 0 0);
+}
+
+.dark {
+  --background: oklch(0.145 0 0);
+  --foreground: oklch(0.985 0 0);
+  --card: oklch(0.205 0 0);
+  --card-foreground: oklch(0.985 0 0);
+  --popover: oklch(0.205 0 0);
+  --popover-foreground: oklch(0.985 0 0);
+  --primary: oklch(0.922 0 0);
+  --primary-foreground: oklch(0.205 0 0);
+  --secondary: oklch(0.269 0 0);
+  --secondary-foreground: oklch(0.985 0 0);
+  --muted: oklch(0.269 0 0);
+  --muted-foreground: oklch(0.708 0 0);
+  --accent: oklch(0.269 0 0);
+  --accent-foreground: oklch(0.985 0 0);
+  --destructive: oklch(0.704 0.191 22.216);
+  --border: oklch(1 0 0 / 10%);
+  --input: oklch(1 0 0 / 15%);
+  --ring: oklch(0.556 0 0);
+  --chart-1: oklch(0.488 0.243 264.376);
+  --chart-2: oklch(0.696 0.17 162.48);
+  --chart-3: oklch(0.769 0.188 70.08);
+  --chart-4: oklch(0.627 0.265 303.9);
+  --chart-5: oklch(0.645 0.246 16.439);
+  --sidebar: oklch(0.205 0 0);
+  --sidebar-foreground: oklch(0.985 0 0);
+  --sidebar-primary: oklch(0.488 0.243 264.376);
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.269 0 0);
+  --sidebar-accent-foreground: oklch(0.985 0 0);
+  --sidebar-border: oklch(1 0 0 / 10%);
+  --sidebar-ring: oklch(0.556 0 0);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+@keyframes hero-gradient-animation {
+  0% {
+    --y-0: 3%;
+    --c-0: hsla(90.00000000000001, 10%, 41%, 1);
+    --s-start-0: 9.607184652436587%;
+    --s-end-0: 46.553805035598664%;
+    --x-0: 2%;
+    --s-start-1: 9.607184652436587%;
+    --s-end-1: 46.553805035598664%;
+    --y-1: 41%;
+    --x-1: 20%;
+    --c-1: hsla(155.17241379310346, 17%, 31%, 1);
+    --s-start-2: 4.389815627743634%;
+    --s-end-2: 27.076429519452372%;
+    --x-2: 42%;
+    --c-2: hsla(1.8181818181818121, 17%, 62%, 1);
+    --y-2: 27%;
+    --s-start-3: 9.607184652436587%;
+    --s-end-3: 46.553805035598664%;
+    --x-3: 62%;
+    --c-3: hsla(155.17241379310346, 17%, 31%, 1);
+    --y-3: 9%;
+    --s-start-4: 4.468860388430093%;
+    --s-end-4: 28.726764092851464%;
+    --y-4: 95%;
+    --c-4: hsla(187.5, 87%, 13%, 1);
+    --x-4: 96%;
+  }
+  100% {
+    --y-0: 35%;
+    --c-0: hsla(90.00000000000001, 10%, 41%, 1);
+    --s-start-0: 9.607184652436587%;
+    --s-end-0: 43.12105913304571%;
+    --x-0: 31%;
+    --s-start-1: 9.607184652436587%;
+    --s-end-1: 48.858759404100496%;
+    --y-1: 69%;
+    --x-1: 5%;
+    --c-1: hsla(155.17241379310346, 17%, 31%, 1);
+    --s-start-2: 9.607184652436587%;
+    --s-end-2: 38.99126559584888%;
+    --x-2: 68%;
+    --c-2: hsla(1.8181818181818121, 17%, 62%, 1);
+    --y-2: 0%;
+    --s-start-3: 9.607184652436587%;
+    --s-end-3: 48.858759404100496%;
+    --x-3: 49%;
+    --c-3: hsla(155.17241379310346, 17%, 31%, 1);
+    --y-3: 63%;
+    --s-start-4: 9.607184652436587%;
+    --s-end-4: 48.858759404100496%;
+    --y-4: 90%;
+    --c-4: hsla(187.5, 95%, 9%, 1);
+    --x-4: 42%;
+  }
+}
+@property --y-0 {
+  syntax: "<percentage>";
+  inherits: false;
+  initial-value: 3%;
+}
+@property --c-0 {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: hsla(90.00000000000001, 10%, 41%, 1);
+}
+@property --s-start-0 {
+  syntax: "<percentage>";
+  inherits: false;
+  initial-value: 9.607184652436587%;
+}
+@property --s-end-0 {
+  syntax: "<percentage>";
+  inherits: false;
+  initial-value: 46.553805035598664%;
+}
+@property --x-0 {
+  syntax: "<percentage>";
+  inherits: false;
+  initial-value: 2%;
+}
+@property --s-start-1 {
+  syntax: "<percentage>";
+  inherits: false;
+  initial-value: 9.607184652436587%;
+}
+@property --s-end-1 {
+  syntax: "<percentage>";
+  inherits: false;
+  initial-value: 46.553805035598664%;
+}
+@property --y-1 {
+  syntax: "<percentage>";
+  inherits: false;
+  initial-value: 41%;
+}
+@property --x-1 {
+  syntax: "<percentage>";
+  inherits: false;
+  initial-value: 20%;
+}
+@property --c-1 {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: hsla(155.17241379310346, 17%, 31%, 1);
+}
+@property --s-start-2 {
+  syntax: "<percentage>";
+  inherits: false;
+  initial-value: 4.389815627743634%;
+}
+@property --s-end-2 {
+  syntax: "<percentage>";
+  inherits: false;
+  initial-value: 27.076429519452372%;
+}
+@property --x-2 {
+  syntax: "<percentage>";
+  inherits: false;
+  initial-value: 42%;
+}
+@property --c-2 {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: hsla(1.8181818181818121, 17%, 62%, 1);
+}
+@property --y-2 {
+  syntax: "<percentage>";
+  inherits: false;
+  initial-value: 27%;
+}
+@property --s-start-3 {
+  syntax: "<percentage>";
+  inherits: false;
+  initial-value: 9.607184652436587%;
+}
+@property --s-end-3 {
+  syntax: "<percentage>";
+  inherits: false;
+  initial-value: 46.553805035598664%;
+}
+@property --x-3 {
+  syntax: "<percentage>";
+  inherits: false;
+  initial-value: 62%;
+}
+@property --c-3 {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: hsla(155.17241379310346, 17%, 31%, 1);
+}
+@property --y-3 {
+  syntax: "<percentage>";
+  inherits: false;
+  initial-value: 9%;
+}
+@property --s-start-4 {
+  syntax: "<percentage>";
+  inherits: false;
+  initial-value: 4.468860388430093%;
+}
+@property --s-end-4 {
+  syntax: "<percentage>";
+  inherits: false;
+  initial-value: 28.726764092851464%;
+}
+@property --y-4 {
+  syntax: "<percentage>";
+  inherits: false;
+  initial-value: 95%;
+}
+@property --c-4 {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: hsla(187.5, 87%, 13%, 1);
+}
+@property --x-4 {
+  syntax: "<percentage>";
+  inherits: false;
+  initial-value: 96%;
+}
+.meshGradient {
+  --y-0: 3%;
+  --c-0: hsla(90.00000000000001, 10%, 41%, 1);
+  --x-0: 2%;
+  --y-1: 41%;
+  --x-1: 20%;
+  --c-1: hsla(155.17241379310346, 17%, 31%, 1);
+  --x-2: 42%;
+  --c-2: hsla(1.8181818181818121, 17%, 62%, 1);
+  --y-2: 27%;
+  --x-3: 62%;
+  --c-3: hsla(155.17241379310346, 17%, 31%, 1);
+  --y-3: 9%;
+  --y-4: 95%;
+  --c-4: hsla(187.5, 87%, 13%, 1);
+  --x-4: 96%;
+  background-color: hsla(187.5, 95%, 9%, 1);
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 2200 2200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E"),
+    radial-gradient(
+      circle at var(--x-0) var(--y-0),
+      var(--c-0) var(--s-start-0),
+      transparent var(--s-end-0)
+    ),
+    radial-gradient(
+      circle at var(--x-1) var(--y-1),
+      var(--c-1) var(--s-start-1),
+      transparent var(--s-end-1)
+    ),
+    radial-gradient(
+      circle at var(--x-2) var(--y-2),
+      var(--c-2) var(--s-start-2),
+      transparent var(--s-end-2)
+    ),
+    radial-gradient(
+      circle at var(--x-3) var(--y-3),
+      var(--c-3) var(--s-start-3),
+      transparent var(--s-end-3)
+    ),
+    radial-gradient(
+      circle at var(--x-4) var(--y-4),
+      var(--c-4) var(--s-start-4),
+      transparent var(--s-end-4)
+    );
+  animation: hero-gradient-animation 15s linear infinite alternate-reverse;
+  background-blend-mode: overlay, normal, normal, normal, normal, normal;
+}
+
+@keyframes floatPulse {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px); /* moves up */
+  }
+  100% {
+    transform: translateY(0px); /* back down */
+  }
+}
+:root {
+  --_gradient564blend-mode: normal;
+  --_gradient564blur: 140px;
+}
+
+.frosted-backdrop {
+  background: radial-gradient(
+      at 100% 79.24935979513444%,
+      #000000 0px,
+      transparent 50%
+    ),
+    radial-gradient(at 0% 45.958706786171575%, #0f3640 0px, transparent 50%),
+    #000000;
+  mix-blend-mode: var(--_gradient564blend-mode);
+  backdrop-filter: blur(var(--_gradient564blur)) contrast(100%) brightness(100%);
+  -webkit-backdrop-filter: blur(var(--_gradient564blur)) contrast(100%)
+    brightness(100%);
+}
+
+@keyframes hero-gradient-animation2 {
+  0% {
+    --s-start-0: 0%;
+    --s-end-0: 39.58944732814056%;
+    --c-0: hsla(152.6213592233019, 0%, 19%, 1);
+    --y-0: 90%;
+    --x-0: 6%;
+  }
+
+  100% {
+    --s-start-0: 29.350055697223667%;
+    --s-end-0: 82.92087255148779%;
+    --c-0: hsla(11.000000000000087, 0%, 0%, 1);
+    --y-0: 88%;
+    --x-0: 98%;
+  }
+}
+
+@property --s-start-0 {
+  syntax: "<percentage>";
+  inherits: false;
+  initial-value: 0%;
+}
+
+@property --s-end-0 {
+  syntax: "<percentage>";
+  inherits: false;
+  initial-value: 39.58944732814056%;
+}
+
+@property --c-0 {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: hsla(152.6213592233019, 0%, 19%, 1);
+}
+
+@property --y-0 {
+  syntax: "<percentage>";
+  inherits: false;
+  initial-value: 90%;
+}
+
+@property --x-0 {
+  syntax: "<percentage>";
+  inherits: false;
+  initial-value: 6%;
+}
+
+.meshGradient2 {
+  --c-0: hsla(152.6213592233019, 0%, 19%, 1);
+  --y-0: 90%;
+  --x-0: 6%;
+  background-color: hsla(359.00000000000006, 0%, 0%, 1);
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 3000 3000' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E"),
+    radial-gradient(
+      circle at var(--x-0) var(--y-0),
+      var(--c-0) var(--s-start-0),
+      transparent var(--s-end-0)
+    );
+  animation: hero-gradient-animation2 10s linear infinite alternate;
+  background-blend-mode: overlay, normal;
+}
+
+.text-outline {
+  /* Webkit prefix for broader browser compatibility */
+  -webkit-text-stroke: 1px white; /* Outline thickness and color */
+  -webkit-text-fill-color: transparent; /* Makes the text fill transparent */
+}
