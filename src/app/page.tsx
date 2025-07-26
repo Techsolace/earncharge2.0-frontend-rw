@@ -5,6 +5,8 @@ import { WobbleCardDemo } from "@/components/Wobble";
 import { HeroGeometric } from "@/components/ui/shape-landing-hero";
 import { Case } from "@/components/Carousel";
 import {MarqueeDemo } from "@/components/Marquee";
+import FaqAccordion from "@/components/Faq";
+import Footer from "@/components/Footer";
 export default function Home() {
   return (
     <>
@@ -15,11 +17,13 @@ export default function Home() {
         <HeroGeometric />
       </div>
       {/* Black background section with sufficient height */}
-      <div className="absolute z-[2] min-h-screen w-full pb-20">
+      <div className="absolute z-[2] min-h-screen w-full">
         <AppleCardsCarouselDemo />
         <WobbleCardDemo />
         <Case />
         <MarqueeDemo />
+        <FaqAccordion />
+        <Footer />
       </div>
     </>
   );
