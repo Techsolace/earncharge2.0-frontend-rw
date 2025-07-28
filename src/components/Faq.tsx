@@ -34,7 +34,7 @@ const faqs = [
 
 export default function FaqAccordion() {
   return (
-    <section className="max-w-4xl mx-auto px-4 py-16 bg-black text-white ubuntu-bold mt-10">
+    <section className="max-w-4xl mx-auto px-4 py-16 text-white ubuntu-bold mt-10">
       <div className="text-center mb-12">
         <h2 className="text-5xl font-extrabold mb-4 text-white tracking-tight">
           Frequently Asked Questions

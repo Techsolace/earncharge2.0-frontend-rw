@@ -61,10 +61,10 @@ const Hero = () => {
       <Image
         src={MockUp}
         alt="mockup"
-        className="absolute z-[2] top-[150px] right-[50px] w-[800px] h-[700px] object-cover float-pulse"
+        className="absolute z-[2] hidden sm:hidden md:hidden lg:block top-[150px] right-[50px] w-[800px] h-[700px] object-cover float-pulse"
       />
       <div className="w-full h-screen">
-        <div className="flex relative flex-wrap container mx-auto h-full items-center justify-between">
+        <div className="flex relative p-10 flex-wrap container mx-auto h-full items-center justify-between">
           <div className="flex flex-[7] flex-col">
             <div></div>
             <h1 className="text-white text-balance text-5xl font-semibold leading-none tracking-tighter sm:text-6xl md:text-7xl lg:text-8xl">
@@ -81,30 +81,31 @@ const Hero = () => {
             </div>
             <div className="w-[500px] ubuntu-regular text-white mt-[-20px]">
               <p>
-                Recharge is fast and easy to use. So, a user can look for a
-                suitable recharge plan and complete the recharge in just a few
-                clicks.
+                Recharge is fast and easy to use. So, a user can look for a{" "}
+                <br />
+                suitable recharge plan and complete the recharge in just a{" "}
+                <br />
+                few clicks.
               </p>
             </div>
             <div>
               <Link
-                href="https://play.google.com/store/apps/details?id=com.earncharge.android"
+                href="https://play.google.com/store/apps/details?id=com.earnchargemobile.earncharge"
                 className="inline-block"
+                target="_blank"
               >
                 <span className="text-black items-center gap-4 py-2 px-6 rounded-xl mt-2 text-lg ubuntu-regular mt-8 flex flex-gap-2 bg-white">
                   <FaGooglePlay /> <span>Google Play</span>
                 </span>
               </Link>
             </div>
-            <div>
-              <div className="flex flex-row absolute bottom-[120px] left-0">
-                <AnimatedTooltip items={people} />
-              </div>
+            <div className="flex flex-row absolute bottom-[120px] p-10 left-0">
+              <AnimatedTooltip items={people} />
             </div>
           </div>
         </div>
-        <div className="flex w-[500px] h-screen meshGradient rounded-l-4xl absolute right-0 top-0 overflow-hidden" />
       </div>
+      <div className="w-[500px] hidden sm:hidden md:hidden lg:flex h-screen meshGradient rounded-l-4xl absolute right-0 top-0 overflow-hidden"></div>
     </>
   );
 };

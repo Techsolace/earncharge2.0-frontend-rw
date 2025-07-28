@@ -18,11 +18,17 @@ export default function Home() {
       </div>
       {/* Black background section with sufficient height */}
       <div className="absolute z-[2] min-h-screen w-full">
+        <div className="p-10 lg:p-0">
+        <div id="features">
         <AppleCardsCarouselDemo />
+        </div>
+        <div id="about">
         <WobbleCardDemo />
+        </div>
         <Case />
         <MarqueeDemo />
         <FaqAccordion />
+        </div>
         <Footer />
       </div>
     </>
