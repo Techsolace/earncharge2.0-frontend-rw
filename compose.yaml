@@ -1,0 +1,9 @@
+services:
+  nextjs:
+    container_name: frontend
+    build: .
+    ports:
+      - "127.0.0.1:6070:6070"
+    environment:
+      - NODE_ENV=production
+    restart: unless-stopped
