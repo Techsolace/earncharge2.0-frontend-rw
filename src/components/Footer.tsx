@@ -3,7 +3,7 @@ import Image from "next/image"
 
 const Footer = () => {
   return (
-    <footer className="bg-black/40 text-white">
+    <footer className="bg-black/40 text-white ubuntu-regular">
       {/* Main Footer Content */}
       <div className="max-w-7xl mx-auto px-6 py-16">
         <div className="grid grid-cols-1 lg:grid-cols-4 gap-12">
@@ -65,25 +65,25 @@ const Footer = () => {
             <h3 className="text-lg font-light mb-8 text-white">Services</h3>
             <nav className="space-y-3">
               <a
-                href="/mobile-recharge"
+                href="#"
                 className="block text-white/70 hover:text-white transition-colors duration-300 text-sm font-light"
               >
                 Mobile Recharge
               </a>
               <a
-                href="/dth-recharge"
+                href="#"
                 className="block text-white/70 hover:text-white transition-colors duration-300 text-sm font-light"
               >
                 DTH Recharge
               </a>
               <a
-                href="/bill-payment"
+                href="#"
                 className="block text-white/70 hover:text-white transition-colors duration-300 text-sm font-light"
               >
                 Bill Payment
               </a>
               <a
-                href="/data-cards"
+                href="#"
                 className="block text-white/70 hover:text-white transition-colors duration-300 text-sm font-light"
               >
                 Data Cards
@@ -108,28 +108,6 @@ const Footer = () => {
               </div>
               <p className="text-xs text-white/50 mt-2 font-light">Scan to download</p>
             </div>
-
-            <div className="space-y-3 mb-6">
-              <a
-                href="/help"
-                className="block text-white/70 hover:text-white transition-colors duration-300 text-sm font-light"
-              >
-                Help Center
-              </a>
-              <a
-                href="/contact"
-                className="block text-white/70 hover:text-white transition-colors duration-300 text-sm font-light"
-              >
-                Contact Us
-              </a>
-              <a
-                href="/api"
-                className="block text-white/70 hover:text-white transition-colors duration-300 text-sm font-light"
-              >
-                API Documentation
-              </a>
-            </div>
-
             {/* Contact Info */}
             <div className="pt-6 border-t border-white/10">
               <p className="text-white/50 text-xs mb-4 font-light">24/7 Support</p>
@@ -163,16 +141,28 @@ const Footer = () => {
             </p>
             <div className="flex space-x-6">
               <a
-                href="/privacy"
+                href="/disclaimer"
+                className="text-white/50 hover:text-white text-sm font-light transition-colors duration-300"
+              >
+                Disclaimer
+              </a>
+              <a
+                href="/policy"
                 className="text-white/50 hover:text-white text-sm font-light transition-colors duration-300"
               >
                 Privacy Policy
               </a>
-              <a
+                            <a
                 href="/terms"
                 className="text-white/50 hover:text-white text-sm font-light transition-colors duration-300"
               >
-                Terms of Service
+                Terms & Conditions
+              </a>
+                            <a
+                href="/refund"
+                className="text-white/50 hover:text-white text-sm font-light transition-colors duration-300"
+              >
+                Refund Policy
               </a>
             </div>
           </div>
