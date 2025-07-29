@@ -79,7 +79,7 @@ const Hero = () => {
             <div>
               <TypewriterEffectSmoothDemo />
             </div>
-            <div className="w-[500px] ubuntu-regular text-white mt-[-20px]">
+            <div className="max-w-[500px] ubuntu-regular text-white mt-[-20px]">
               <p>
                 Recharge is fast and easy to use. So, a user can look for a{" "}
                 <br />
@@ -94,7 +94,7 @@ const Hero = () => {
                 className="inline-block"
                 target="_blank"
               >
-                <span className="text-black items-center gap-4 py-2 px-6 rounded-xl mt-2 text-lg ubuntu-regular mt-8 flex flex-gap-2 bg-white">
+                <span className="text-black items-center gap-4 py-2 px-6 rounded-xl text-lg ubuntu-regular mt-8 flex flex-gap-2 bg-white">
                   <FaGooglePlay /> <span>Google Play</span>
                 </span>
               </Link>
@@ -105,7 +105,7 @@ const Hero = () => {
           </div>
         </div>
       </div>
-      <div className="w-[500px] hidden sm:hidden md:hidden lg:flex h-screen meshGradient rounded-l-4xl absolute right-0 top-0 overflow-hidden"></div>
+      {/* <div className="w-[500px] hidden sm:hidden md:hidden lg:flex h-screen meshGradient rounded-l-4xl absolute right-0 top-0 overflow-hidden"></div> */}
     </>
   );
 };
