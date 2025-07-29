@@ -12,11 +12,9 @@ export default function Home() {
     <>
       <Header />
       <Hero />
-      {/* Ensure HeroGeometric is visible with proper stacking */}
-      <div className="fixed inset-0 z-[-2] w-full h-full">
+      <div className="fixed inset-0 z-[-2] w-full h-full overflow-hidden">
         <HeroGeometric />
       </div>
-      {/* Black background section with sufficient height */}
       <div className="absolute z-[2] min-h-screen w-full">
         <div className="p-5 lg:p-0">
         <div id="features">

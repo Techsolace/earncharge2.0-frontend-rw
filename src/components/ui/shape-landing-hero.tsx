@@ -8,8 +8,10 @@ import { cn } from "@/lib/utils";
 function ElegantShape({
   className,
   delay = 0,
-  width = 400,
-  height = 100,
+  width = 400, // Default for desktop
+  height = 100, // Default for desktop
+  mobileWidth = 200, // New prop for mobile width
+  mobileHeight = 50, // New prop for mobile height
   rotate = 0,
   gradient = "from-white/[0.08]",
 }: {
@@ -17,6 +19,8 @@ function ElegantShape({
   delay?: number;
   width?: number;
   height?: number;
+  mobileWidth?: number; // Added
+  mobileHeight?: number; // Added
   rotate?: number;
   gradient?: string;
 }) {
@@ -49,11 +53,16 @@ function ElegantShape({
           repeat: Number.POSITIVE_INFINITY,
           ease: "easeInOut",
         }}
+        // Use responsive width and height
         style={{
-          width,
-          height,
+          width: width, // Default (desktop)
+          height: height, // Default (desktop)
         }}
-        className="relative"
+        // Tailwind classes for mobile-specific sizing
+        className={cn(
+          "relative",
+          `w-[${mobileWidth}px] h-[${mobileHeight}px] md:w-[${width}px] md:h-[${height}px]`
+        )}
       >
         <div
           className={cn(
@@ -98,22 +107,26 @@ function HeroGeometric({
       <div className="absolute inset-0 bg-gradient-to-br from-indigo-500/[0.05] via-transparent to-rose-500/[0.05] blur-3xl" />
 
       <div className="absolute inset-0 overflow-hidden">
+        {/* Main shape: always visible, smaller on mobile */}
         <ElegantShape
           delay={0.3}
           width={600}
           height={140}
+          mobileWidth={300} // Smaller on mobile
+          mobileHeight={70} // Smaller on mobile
           rotate={12}
           gradient="from-indigo-500/[0.15]"
           className="left-[-10%] md:left-[-5%] top-[15%] md:top-[20%]"
         />
 
+        {/* These shapes will be hidden on mobile (up to md breakpoint) */}
         <ElegantShape
           delay={0.5}
           width={500}
           height={120}
           rotate={-15}
           gradient="from-rose-500/[0.15]"
-          className="right-[-5%] md:right-[0%] top-[70%] md:top-[75%]"
+          className="hidden md:block right-[-5%] md:right-[0%] top-[70%] md:top-[75%]"
         />
 
         <ElegantShape
@@ -122,7 +135,7 @@ function HeroGeometric({
           height={80}
           rotate={-8}
           gradient="from-violet-500/[0.15]"
-          className="left-[5%] md:left-[10%] bottom-[5%] md:bottom-[10%]"
+          className="hidden md:block left-[5%] md:left-[10%] bottom-[5%] md:bottom-[10%]"
         />
 
         <ElegantShape
@@ -131,7 +144,7 @@ function HeroGeometric({
           height={60}
           rotate={20}
           gradient="from-amber-500/[0.15]"
-          className="right-[15%] md:right-[20%] top-[10%] md:top-[15%]"
+          className="hidden md:block right-[15%] md:right-[20%] top-[10%] md:top-[15%]"
         />
 
         <ElegantShape
@@ -140,7 +153,7 @@ function HeroGeometric({
           height={40}
           rotate={-25}
           gradient="from-cyan-500/[0.15]"
-          className="left-[20%] md:left-[25%] top-[5%] md:top-[10%]"
+          className="hidden md:block left-[20%] md:left-[25%] top-[5%] md:top-[10%]"
         />
       </div>
       <div className="absolute inset-0 bg-gradient-to-t from-[#030303] via-transparent to-[#030303]/80 pointer-events-none" />
