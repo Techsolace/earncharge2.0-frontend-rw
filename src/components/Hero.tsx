@@ -105,7 +105,7 @@ const Hero = () => {
           </div>
         </div>
       </div>
-      {/* <div className="w-[500px] hidden sm:hidden md:hidden lg:flex h-screen meshGradient rounded-l-4xl absolute right-0 top-0 overflow-hidden"></div> */}
+      <div className="w-[500px] hidden sm:hidden md:hidden lg:flex h-screen meshGradient rounded-l-4xl absolute right-0 top-0 overflow-hidden"></div>
     </>
   );
 };
