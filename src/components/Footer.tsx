@@ -1,5 +1,13 @@
-import { Facebook, Instagram, Youtube, MessageCircle, Mail, Phone, Download } from "lucide-react"
-import Image from "next/image"
+import {
+  Facebook,
+  Instagram,
+  Youtube,
+  MessageCircle,
+  Mail,
+  Phone,
+  Download,
+} from "lucide-react";
+import Image from "next/image";
 
 const Footer = () => {
   return (
@@ -10,13 +18,15 @@ const Footer = () => {
           {/* Column 1: Brand & About */}
           <div className="lg:col-span-2">
             <div className="mb-8">
-              <h2 className="text-3xl font-light mb-4 text-white">EarnCharge</h2>
+              <h2 className="text-3xl font-light mb-4 text-white">
+                EarnCharge
+              </h2>
               <div className="w-12 h-px bg-white/30 mb-6"></div>
             </div>
 
             <p className="text-white/70 text-sm leading-relaxed mb-8 font-light">
-              Your trusted platform for instant mobile recharges, bill payments, and digital services. Fast, secure, and
-              reliable.
+              Your trusted platform for instant mobile recharges, bill payments,
+              and digital services. Fast, secure, and reliable.
             </p>
 
             {/* Social Media Icons */}
@@ -106,11 +116,15 @@ const Footer = () => {
                   className=""
                 />
               </div>
-              <p className="text-xs text-white/50 mt-2 font-light">Scan to download</p>
+              <p className="text-xs text-white/50 mt-2 font-light">
+                Scan to download
+              </p>
             </div>
             {/* Contact Info */}
             <div className="pt-6 border-t border-white/10">
-              <p className="text-white/50 text-xs mb-4 font-light">24/7 Support</p>
+              <p className="text-white/50 text-xs mb-4 font-light">
+                24/7 Support
+              </p>
               <div className="space-y-2">
                 <a
                   href="mailto:support@earncharge.in"
@@ -142,25 +156,25 @@ const Footer = () => {
             <div className="flex space-x-6">
               <a
                 href="/disclaimer"
-                className="text-white/50 hover:text-white text-sm font-light transition-colors duration-300"
+                className="text-white/50 hover:text-white text-xs font-light transition-colors duration-300"
               >
                 Disclaimer
               </a>
               <a
                 href="/policy"
-                className="text-white/50 hover:text-white text-sm font-light transition-colors duration-300"
+                className="text-white/50 hover:text-white text-xs font-light transition-colors duration-300"
               >
                 Privacy Policy
               </a>
-                            <a
+              <a
                 href="/terms"
-                className="text-white/50 hover:text-white text-sm font-light transition-colors duration-300"
+                className="text-white/50 hover:text-white text-xs font-light transition-colors duration-300"
               >
                 Terms & Conditions
               </a>
-                            <a
+              <a
                 href="/refund"
-                className="text-white/50 hover:text-white text-sm font-light transition-colors duration-300"
+                className="text-white/50 hover:text-white text-xs font-light transition-colors duration-300"
               >
                 Refund Policy
               </a>
@@ -169,7 +183,7 @@ const Footer = () => {
         </div>
       </div>
     </footer>
-  )
-}
+  );
+};
 
-export default Footer
+export default Footer;

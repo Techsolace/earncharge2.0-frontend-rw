@@ -63,14 +63,13 @@ const Hero = () => {
         alt="mockup"
         className="absolute z-[2] hidden sm:hidden md:hidden lg:block top-[150px] right-[50px] w-[800px] h-[700px] object-cover float-pulse"
       />
-      <div className="w-full h-screen">
-        <div className="flex relative p-10 flex-wrap container mx-auto h-full items-center justify-between">
+      <div className="w-full h-screen px-5">
+        <div className="flex relative flex-wrap container mx-auto h-full items-center justify-between">
           <div className="flex flex-[7] flex-col">
-            <div></div>
             <h1 className="text-white text-balance text-5xl font-semibold leading-none tracking-tighter sm:text-6xl md:text-7xl lg:text-8xl">
               Earn
               <LineShadowText
-                className="italic bg-gradient-to-r from-teal-500 to-emerald-700 bg-clip-text text-transparent pb-4 pr-5"
+                className="italic bg-gradient-to-r from-teal-500 to-emerald-700 bg-clip-text text-transparent pr-5"
                 shadowColor={shadowColor}
               >
                 Charge
@@ -79,13 +78,11 @@ const Hero = () => {
             <div>
               <TypewriterEffectSmoothDemo />
             </div>
-            <div className="max-w-[500px] ubuntu-regular text-white mt-[-20px]">
+            <div className="max-w-[500px] ubuntu-regular text-white">
               <p>
-                Recharge is fast and easy to use. So, a user can look for a{" "}
-                <br />
-                suitable recharge plan and complete the recharge in just a{" "}
-                <br />
-                few clicks.
+                Recharge is fast and easy to use. So, a user can look for a
+                suitable recharge plan and complete the recharge in just a few
+                clicks.
               </p>
             </div>
             <div>
@@ -99,7 +96,7 @@ const Hero = () => {
                 </span>
               </Link>
             </div>
-            <div className="flex flex-row absolute bottom-[120px] p-10 left-0">
+            <div className="flex flex-row absolute bottom-[120px] px-5 left-0">
               <AnimatedTooltip items={people} />
             </div>
           </div>

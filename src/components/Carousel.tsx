@@ -1,217 +1,59 @@
-"use client";
+"use client"; // Keep this if it's a Next.js client component
 
-import { useEffect, useState } from "react";
-import {
-  Carousel,
-  CarouselApi,
-  CarouselContent,
-  CarouselItem,
-} from "@/components/custom/carousel";
-import Image from "next/image";
+import React from 'react';
+import { Marquee } from './magicui/marquee'; // Assuming this path is correct
+import Image from 'next/image';
 
-function Case() {
-  const [api, setApi] = useState<CarouselApi>();
-  const [current, setCurrent] = useState(0);
+// Define your image data with more descriptive names, similar to the old code's text
+const billCategories = [
+  { url: '/1icon.png', name: 'Landline Bills' },
+  { url: '/2icon.png', name: 'Electricity Bills' },
+  { url: '/3icon.png', name: 'Gas Bills' },
+  { url: '/4icon.png', name: 'Water Bills' },
+  { url: '/5icon.png', name: 'Mobile Postpaid' },
+  { url: '/6icon.png', name: 'Data Card' },
+  // Duplicate them if you want more items visible in the marquee at once
+  { url: '/1icon.png', name: 'Landline Bills' },
+  { url: '/2icon.png', name: 'Electricity Bills' },
+  { url: '/3icon.png', name: 'Gas Bills' },
+  { url: '/4icon.png', name: 'Water Bills' },
+  { url: '/5icon.png', name: 'Mobile Postpaid' },
+  { url: '/6icon.png', name: 'Data Card' },
+];
 
-  useEffect(() => {
-    if (!api) {
-      return;
-    }
-
-    setTimeout(() => {
-      if (api.selectedScrollSnap() + 1 === api.scrollSnapList().length) {
-        setCurrent(0);
-        api.scrollTo(0);
-      } else {
-        api.scrollNext();
-        setCurrent(current + 1);
-      }
-    }, 1000);
-  }, [api, current]);
-
+export default function Case() { // Renamed back to Case to match your original component name
   return (
-    <div className="w-full py-20 lg:py-40">
-      <div className="container mx-auto">
-        <div className="flex flex-col  gap-10">
-          <h2 className="text-5xl ubuntu-bold text-white tracking-tighter lg:max-w-xl font-regular text-left">
-            Bharat Bill Payment System
+    <div className="w-full py-20 lg:py-40"> {/* Outer container from old code */}
+      <div className="container mx-auto"> {/* Centering container from old code */}
+        <div className="flex flex-col gap-10"> {/* Gap for title and marquee */}
+          <h2 className="text-4xl md:text-5xl ubuntu-bold text-white tracking-tighter lg:max-w-xl font-regular text-left">
+            Bharat Bill Payment System {/* Title from old code */}
           </h2>
-          <Carousel setApi={setApi} className="w-full">
-            <CarouselContent>
-              <CarouselItem className="basis-1/4 lg:basis-1/6">
-                <div className="flex rounded-md text-white aspect-square items-center justify-center p-6">
+
+          <div className="relative flex w-full flex-col items-center justify-center overflow-hidden">
+            <Marquee pauseOnHover className="[--duration:40s]"> {/* Marquee from new code */}
+              {billCategories.map((category, idx) => (
+                // Each item's structure and styling from the old CarouselItem
+                // Adapted to fit the Marquee context
+                <div key={idx} className="flex rounded-md text-white aspect-square items-center justify-center p-6 mx-8">
                   <div className="flex flex-col gap-2 items-center justify-center ubuntu-regular">
                     <Image
-                      src="/1icon.png"
-                      width={100}
+                      src={category.url}
+                      width={100} // Keep original width/height for Next/Image internal optimization
                       height={100}
-                      alt="mockup"
-                      className="rounded-md"
+                      alt={category.name} // Descriptive alt text
+                      className="rounded-md w-auto h-20" // Control display size with CSS
                     />
-                    <p>Landline Bills</p>
+                    <p>{category.name}</p>
                   </div>
                 </div>
-              </CarouselItem>
-              <CarouselItem className="basis-1/4 lg:basis-1/6">
-                <div className="flex rounded-md text-white aspect-square items-center justify-center p-6">
-                  <div className="flex flex-col gap-2 items-center justify-center ubuntu-regular">
-                    <Image
-                      src="/2icon.png"
-                      width={100}
-                      height={100}
-                      alt="mockup"
-                      className="rounded-md"
-                    />
-                    <p>Electricity Bills</p>
-                  </div>
-                </div>
-              </CarouselItem>
-              <CarouselItem className="basis-1/4 lg:basis-1/6">
-                <div className="flex rounded-md text-white aspect-square items-center justify-center p-6">
-                  <div className="flex flex-col gap-2 items-center justify-center ubuntu-regular">
-                    <Image
-                      src="/3icon.png"
-                      width={100}
-                      height={100}
-                      alt="mockup"
-                      className="rounded-md"
-                    />
-                    <p>Gas Bills</p>
-                  </div>
-                </div>
-              </CarouselItem>
-              <CarouselItem className="basis-1/4 lg:basis-1/6">
-                <div className="flex rounded-md text-white aspect-square items-center justify-center p-6">
-                  <div className="flex flex-col gap-2 items-center justify-center ubuntu-regular">
-                    <Image
-                      src="/4icon.png"
-                      width={100}
-                      height={100}
-                      alt="mockup"
-                      className="rounded-md"
-                    />
-                    <p>Water Bills</p>
-                  </div>
-                </div>
-              </CarouselItem>
-              <CarouselItem className="basis-1/4 lg:basis-1/6">
-                <div className="flex rounded-md text-white aspect-square items-center justify-center p-6">
-                  <div className="flex flex-col gap-2 items-center justify-center ubuntu-regular">
-                    <Image
-                      src="/5icon.png"
-                      width={100}
-                      height={100}
-                      alt="mockup"
-                      className="rounded-md"
-                    />
-                    <p>Mobile Postpaid</p>
-                  </div>
-                </div>
-              </CarouselItem>
-              <CarouselItem className="basis-1/4 lg:basis-1/6">
-                <div className="flex rounded-md text-white aspect-square items-center justify-center p-6">
-                  <div className="flex flex-col gap-2 items-center justify-center ubuntu-regular">
-                    <Image
-                      src="/6icon.png"
-                      width={100}
-                      height={100}
-                      alt="mockup"
-                      className="rounded-md"
-                    />
-                    <p>Data Card</p>
-                  </div>
-                </div>
-              </CarouselItem>
-              <CarouselItem className="basis-1/4 lg:basis-1/6">
-                <div className="flex rounded-md text-white aspect-square items-center justify-center p-6">
-                  <div className="flex flex-col gap-2 items-center justify-center ubuntu-regular">
-                    <Image
-                      src="/1icon.png"
-                      width={100}
-                      height={100}
-                      alt="mockup"
-                      className="rounded-md"
-                    />
-                    <p>Landline Bills</p>
-                  </div>
-                </div>
-              </CarouselItem>
-              <CarouselItem className="basis-1/4 lg:basis-1/6">
-                <div className="flex rounded-md text-white aspect-square items-center justify-center p-6">
-                  <div className="flex flex-col gap-2 items-center justify-center ubuntu-regular">
-                    <Image
-                      src="/2icon.png"
-                      width={100}
-                      height={100}
-                      alt="mockup"
-                      className="rounded-md"
-                    />
-                    <p>Electricity Bills</p>
-                  </div>
-                </div>
-              </CarouselItem>
-              <CarouselItem className="basis-1/4 lg:basis-1/6">
-                <div className="flex rounded-md text-white aspect-square items-center justify-center p-6">
-                  <div className="flex flex-col gap-2 items-center justify-center ubuntu-regular">
-                    <Image
-                      src="/3icon.png"
-                      width={100}
-                      height={100}
-                      alt="mockup"
-                      className="rounded-md"
-                    />
-                    <p>Gas Bills</p>
-                  </div>
-                </div>
-              </CarouselItem>
-              <CarouselItem className="basis-1/4 lg:basis-1/6">
-                <div className="flex rounded-md text-white aspect-square items-center justify-center p-6">
-                  <div className="flex flex-col gap-2 items-center justify-center ubuntu-regular">
-                    <Image
-                      src="/4icon.png"
-                      width={100}
-                      height={100}
-                      alt="mockup"
-                      className="rounded-md"
-                    />
-                    <p>Water Bills</p>
-                  </div>
-                </div>
-              </CarouselItem>
-              <CarouselItem className="basis-1/4 lg:basis-1/6">
-                <div className="flex rounded-md text-white aspect-square items-center justify-center p-6">
-                  <div className="flex flex-col gap-2 items-center justify-center ubuntu-regular">
-                    <Image
-                      src="/5icon.png"
-                      width={100}
-                      height={100}
-                      alt="mockup"
-                      className="rounded-md"
-                    />
-                    <p>Mobile Postpaid</p>
-                  </div>
-                </div>
-              </CarouselItem>
-              <CarouselItem className="basis-1/4 lg:basis-1/6">
-                <div className="flex rounded-md text-white aspect-square items-center justify-center p-6">
-                  <div className="flex flex-col gap-2 items-center justify-center ubuntu-regular">
-                    <Image
-                      src="/6icon.png"
-                      width={100}
-                      height={100}
-                      alt="mockup"
-                      className="rounded-md"
-                    />
-                    <p>Data Card</p>
-                  </div>
-                </div>
-              </CarouselItem>
-            </CarouselContent>
-          </Carousel>
+              ))}
+            </Marquee>
+          </div>
         </div>
       </div>
     </div>
   );
 }
 
-export { Case };
+export { Case }; // Export the component

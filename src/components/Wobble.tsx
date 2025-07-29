@@ -27,7 +27,7 @@ export function WobbleCardDemo() {
           width={200}
           height={200}
           alt="linear demo image"
-          className="absolute -right-10 md:-right-[20%] lg:-right-[4%] -bottom-10 object-contain rounded-2xl"
+          className="absolute -right-10 md:-right-[20%] lg:-right-[4%] -bottom-44 md:-bottom-10 object-contain rounded-2xl"
         />
       </WobbleCard>
       <WobbleCard containerClassName="col-span-1 min-h-[300px] bg-gradient-to-r from-zinc-900 to-black">
@@ -59,7 +59,7 @@ export function WobbleCardDemo() {
           width={200}
           height={200}
           alt="linear demo image"
-          className="absolute -right-10 md:-right-[20%] lg:-right-[2%] -bottom-10 object-contain rounded-2xl"
+          className="absolute -right-10 md:-right-[20%] lg:-right-[2%] -bottom-44 md:-bottom-10 z-[-2] object-contain rounded-2xl"
         />
       </WobbleCard>
     </div>

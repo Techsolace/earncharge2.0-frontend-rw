@@ -20,7 +20,7 @@ export function TypewriterEffectSmoothDemo() {
     },
   ];
   return (
-    <div className="ubuntu-regular text-white">
+    <div className="ubuntu-regular text-white my-3 mb-3">
       <TypewriterEffectSmooth words={words} />
     </div>
   );

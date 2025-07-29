@@ -36,10 +36,10 @@ export default function FaqAccordion() {
   return (
     <section className="max-w-4xl mx-auto px-4 py-16 text-white ubuntu-bold mt-10">
       <div className="text-center mb-12">
-        <h2 className="text-5xl font-extrabold mb-4 text-white tracking-tight">
+        <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold mb-4 text-white tracking-tight">
           Frequently Asked Questions
         </h2>
-        <p className="text-xl text-gray-300">
+        <p className="text-sm md:text-xl text-gray-300">
           Your guide to seamless mobile recharges and bill payments.
         </p>
       </div>
@@ -53,14 +53,14 @@ export default function FaqAccordion() {
             <Accordion.Header className="flex">
               <Accordion.Trigger
                 className={cn(
-                  "flex-1 flex items-center justify-between p-6 font-semibold text-left text-white text-lg transition-all duration-300 hover:bg-black-800/50 focus:outline-none focus-visible:ring focus-visible:ring-neon-blue focus-visible:ring-opacity-75"
+                  "flex-1 flex items-center justify-between p-5 font-semibold text-left text-white text-sm md:text-lg transition-all duration-300 hover:bg-black-800/50 focus:outline-none focus-visible:ring focus-visible:ring-neon-blue focus-visible:ring-opacity-75"
                 )}
               >
                 {faq.question}
                 <FaChevronDown className="h-5 w-5 text-neon-blue transition-transform duration-300 ui-state-open:rotate-180" />
               </Accordion.Trigger>
             </Accordion.Header>
-            <Accordion.Content className="px-6 pb-5 text-gray-300 text-base data-[state=closed]:animate-accordion-up data-[state=open]:animate-accordion-down">
+            <Accordion.Content className="px-6 pb-5 text-gray-300 font-normal text-base data-[state=closed]:animate-accordion-up data-[state=open]:animate-accordion-down">
               <div className="pt-3 border-t border-gray-800">{faq.answer}</div>
             </Accordion.Content>
           </Accordion.Item>
