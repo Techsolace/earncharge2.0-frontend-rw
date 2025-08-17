@@ -146,39 +146,20 @@ const Footer = () => {
         </div>
       </div>
 
-      {/* Bottom Bar */}
+      {/* Bottom Bar -- UPDATED SECTION */}
       <div className="border-t border-white/10">
-        <div className="max-w-7xl mx-auto px-6 py-6">
-          <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
-            <p className="text-white/50 text-sm font-light">
-              © {new Date().getFullYear()} EarnCharge. All rights reserved.
+        <div className="max-w-7xl mx-auto px-6 py-8">
+          <div className="flex flex-col md:flex-row justify-between items-center space-y-6 md:space-y-0 text-center md:text-left">
+            <p className="text-white/70 text-sm font-light">
+              Made with ❤️ in India
             </p>
-            <div className="flex space-x-6">
-              <a
-                href="/disclaimer"
-                className="text-white/50 hover:text-white text-xs font-light transition-colors duration-300"
-              >
-                Disclaimer
-              </a>
-              <a
-                href="/policy"
-                className="text-white/50 hover:text-white text-xs font-light transition-colors duration-300"
-              >
-                Privacy Policy
-              </a>
-              <a
-                href="/terms"
-                className="text-white/50 hover:text-white text-xs font-light transition-colors duration-300"
-              >
-                Terms & Conditions
-              </a>
-              <a
-                href="/refund"
-                className="text-white/50 hover:text-white text-xs font-light transition-colors duration-300"
-              >
-                Refund Policy
-              </a>
-            </div>
+            <p className="text-white/70 text-sm font-light md:text-right max-w-xl">
+              Earncharge is a fully owned subsidiary of Arahant Economy
+              Services Private Limited. It is a digital platform providing Mobile
+              Recharge and BBPS services. Earncharge is a part of Acamus
+              Utility Recharge Services private limited and a sister company of
+              Arahant Economy Services Private Limited.
+            </p>
           </div>
         </div>
       </div>
