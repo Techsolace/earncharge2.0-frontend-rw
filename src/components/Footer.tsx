@@ -8,6 +8,7 @@ import {
   Download,
 } from "lucide-react";
 import Image from "next/image";
+import Playstore from '../../public/google-playstore.jpg'
 
 const Footer = () => {
   return (
@@ -60,12 +61,31 @@ const Footer = () => {
             {/* Google Play Button */}
             <a
               href="https://play.google.com/store/apps/details?id=com.earnchargemobile.earncharge"
-              className="inline-flex items-center space-x-3 border border-white/20 px-6 py-3 hover:bg-white hover:text-black transition-all duration-300"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center bg-black rounded-lg px-4 py-2 shadow hover:bg-neutral-900 transition"
+              style={{ width: "fit-content" }}
             >
-              <Download className="w-5 h-5" />
-              <div className="text-left">
-                <div className="text-xs opacity-70">Get it on</div>
-                <div className="text-sm font-medium">Google Play</div>
+              <Image
+                src={Playstore}
+                alt="Google Play logo"
+                width={40}
+                height={40}
+                className="mr-3"
+              />
+              <div className="flex flex-col text-left leading-tight">
+                <span
+                  className="text-xs text-white font-medium uppercase tracking-wide"
+                  style={{ letterSpacing: "0.5px" }}
+                >
+                  Get it on
+                </span>
+                <span
+                  className="text-lg text-white font-semibold -mt-1"
+                  style={{ fontFamily: "'Product Sans', Arial, sans-serif" }}
+                >
+                  Google Play
+                </span>
               </div>
             </a>
           </div>
@@ -104,24 +124,8 @@ const Footer = () => {
           {/* Column 3: Support & QR Code */}
           <div>
             <h3 className="text-lg font-light mb-8 text-white">Support</h3>
-
-            {/* QR Code */}
-            <div className="mb-8">
-              <div className="inline-block p-3 border border-white/20">
-                <Image
-                  src="/qr-code.webp"
-                  alt="Download EarnCharge App QR Code"
-                  width={100}
-                  height={100}
-                  className=""
-                />
-              </div>
-              <p className="text-xs text-white/50 mt-2 font-light">
-                Scan to download
-              </p>
-            </div>
             {/* Contact Info */}
-            <div className="pt-6 border-t border-white/10">
+            <div>
               <p className="text-white/50 text-xs mb-4 font-light">
                 24/7 Support
               </p>
@@ -131,14 +135,14 @@ const Footer = () => {
                   className="flex items-center space-x-2 text-white/70 hover:text-white transition-colors duration-300 text-sm font-light"
                 >
                   <Mail className="w-3 h-3" />
-                  <span>support@earncharge.in</span>
+                  <span>assist@earncharge.in</span>
                 </a>
                 <a
                   href="tel:+911234567890"
                   className="flex items-center space-x-2 text-white/70 hover:text-white transition-colors duration-300 text-sm font-light"
                 >
                   <Phone className="w-3 h-3" />
-                  <span>+91 12345 67890</span>
+                  <span>+91-7058111852</span>
                 </a>
               </div>
             </div>
@@ -154,11 +158,11 @@ const Footer = () => {
               Made with ❤️ in India
             </p>
             <p className="text-white/70 text-sm font-light md:text-right max-w-xl">
-              Earncharge is a fully owned subsidiary of Arahant Economy
-              Services Private Limited. It is a digital platform providing Mobile
-              Recharge and BBPS services. Earncharge is a part of Acamus
-              Utility Recharge Services private limited and a sister company of
-              Arahant Economy Services Private Limited.
+              Earncharge is a fully owned subsidiary of Arahant Economy Services
+              Private Limited. It is a digital platform providing Mobile
+              Recharge and BBPS services. Earncharge is a part of Acamus Utility
+              Recharge Services private limited and a sister company of Arahant
+              Economy Services Private Limited.
             </p>
           </div>
         </div>
